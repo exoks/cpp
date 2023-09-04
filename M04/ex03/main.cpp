@@ -6,19 +6,17 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:10:28 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 17:14:54 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/03 23:31:42 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # include "Ice.hpp"
 # include "Cure.hpp"
+# include "Character.hpp"
 
 //==== Main Function ===========================================================
 int	main(void)
 {
-	AMateria	*am;
-//	Ice			*ice;
-
-	am = new Cure();
-//	ice = am->clone();
+	Character	character("oussama");
+	
 	return (EXIT_SUCCESS);
 }

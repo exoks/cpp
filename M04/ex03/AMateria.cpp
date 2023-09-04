@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:05:14 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 21:56:57 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/03 23:47:59 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # include "AMateria.hpp"
@@ -48,22 +48,3 @@ void	AMateria::use(ICharacter& target)
 {
 	(void) target;
 }
-
-//==== use =====================================================================
-/*void	AMateria::use(int index, ICharacter& target)
-{
-	(void) target;
-	(void) index;
-}*/
-
-//==== equip ===================================================================
-/*void	AMateria::equip(AMateria *m)
-{
-	(void) m;
-}*/
-
-//==== unequip =================================================================
-/*void	AMateria::unequip(int idx)
-{
-	(void) idx;
-}*/

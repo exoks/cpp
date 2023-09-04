@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 20:17:44 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 21:41:02 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/03 23:41:41 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __ICHARACTER_HPP__
@@ -17,9 +17,9 @@ class	ICharacter
 {
 	public:
 		virtual	~ICharacter();
-		virtual	std::string const& getType(void) const = 0;
-		virtual	void		use(int index, ICharacter& target) = 0;
-//		virtual	void		equip(AMateria *m) = 0;
+		virtual	std::string const& getName(void) const = 0;
+		virtual	void		use(int idx, ICharacter& target) = 0;
+		virtual	void		equip(AMateria *m) = 0;
 		virtual	void		unequip(int idx) = 0;
 };
 
