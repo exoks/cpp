@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 16:35:21 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 15:39:40 by oezzaou          ###   ########.fr       */
+/*   Created: 2023/09/04 16:07:13 by oezzaou           #+#    #+#             */
+/*   Updated: 2023/09/04 16:09:29 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef __CURE_HPP__
-# define __CURE_HPP__
-# include "Character.hpp"
 
-class	Cure : public AMateria
+# include "IMateriaSource.hpp"
+
+//==== IMateria Destructor =====================================================
+IMateriaSource::~IMateriaSource()
 {
-	public:
-		Cure(void);
-		Cure(const Cure& cure);
-		~Cure();
-		
-		Cure&	operator= (const Cure& cure);
-
-		Cure	*clone() const;
-		void	use(ICharacter& target);
-};
-
-#endif /*__CURE_HPP__*/
+}

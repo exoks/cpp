@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:37:41 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 21:54:11 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/04 21:40:47 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ Ice		*Ice::clone(void) const
 //==== use =====================================================================
 void	Ice::use(ICharacter& target)
 {
-	(void) target;
-	std::cout << ":===> Ice " << std::endl;
+	std::cout	<< "* shoots an ice bolt at "
+				<< target.getName() << " *"
+				<< std::endl;
 }

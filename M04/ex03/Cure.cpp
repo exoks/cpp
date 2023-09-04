@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:37:41 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 23:40:35 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/04 21:43:17 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,8 @@ Cure		*Cure::clone() const
 //==== user ====================================================================
 void	Cure::use(ICharacter& target)
 {
-	(void) target;
+	std::cout	<< "* heals"
+				<< target.getName()
+				<< "'s woundes *"
+				<< std::endl;
 }

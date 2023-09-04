@@ -6,12 +6,12 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:35:21 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 21:52:14 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/04 15:40:36 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __ICE_HPP__
 # define __ICE_HPP__
-# include "AMateria.hpp"
+# include "Character.hpp"
 
 class	Ice : public AMateria
 {
