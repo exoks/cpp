@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:25:04 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 13:05:14 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 23:16:31 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __DOG_HPP__
@@ -17,14 +17,15 @@
 class	Dog: public Animal
 {
 	private:
-		Brain	*brain;
+		Brain *brain;
 
 	public:
-		Dog();
+		Dog(void);
 		Dog(const Dog& dog);
-		Dog&	operator= (const Dog& dog);
-		~Dog();
+		~Dog(void);
 
+		Dog&	operator= (const Dog& dog);
+		
 		void	makeSound(void) const;
 };
 

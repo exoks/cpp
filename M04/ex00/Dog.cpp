@@ -6,13 +6,13 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:42:12 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 10:53:52 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 22:17:35 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Dog.hpp"
 
 //==== Dog Default Constructor =================================================
-Dog::Dog() : Animal("Dog")
+Dog::Dog(void) : Animal("Dog")
 {
 	std::cout << "Dog Default Constructor Called" << std::endl;
 }
@@ -31,7 +31,7 @@ Dog&	Dog::operator= (const Dog& dog)
 }
 
 //==== Dog Destructor ==========================================================
-Dog::~Dog()
+Dog::~Dog(void)
 {
 	std::cout << "Dog Destructor Called" << std::endl;
 }

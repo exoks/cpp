@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:10:28 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 20:41:32 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 22:10:28 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # include "AMateria.hpp"
@@ -17,19 +17,27 @@
 //==== Main Function ===========================================================
 int	main(void)
 {
+	ICharacter		*oussama = new Character("oussama");
+	ICharacter		*bob = new Character("jim");
 	IMateriaSource	*src = new MateriaSource();
-	ICharacter		*me = new Character("oussama");
 	AMateria		*tmp;
 
-	(void) me;
+	std::cout	<< std::endl
+				<< "============== Main Part ==============" << std::endl;
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	tmp = src->createMateria("ice");
-	std::cout << "Address: " << tmp << std::endl;
-	std::cout << "Type: " << tmp->getType() << std::endl;
+	oussama->equip(tmp);
 	tmp = src->createMateria("cure");
-	std::cout << "Address: " << tmp << std::endl;
-	std::cout << "Type: " << tmp->getType() << std::endl;
-		
+	oussama->equip(tmp);
+
+	oussama->use(0, *bob);
+	oussama->use(1, *bob);
+
+	std::cout	<< std::endl
+				<< "========== Deleting Instance ==========" << std::endl;
+	delete oussama;
+	delete bob;
+	delete src;
 	return (EXIT_SUCCESS);
 }

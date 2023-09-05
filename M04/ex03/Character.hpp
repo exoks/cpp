@@ -6,20 +6,19 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 22:47:47 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 15:31:55 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 20:55:21 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __CHARACTER_HPP__
 # define __CHARACTER_HPP__
 # include "ICharacter.hpp"
-# include "AMateria.hpp"
 
 class	Character : public ICharacter
 {
 	private:
 		std::string	name;
 		AMateria	**inventory;
-		int			slot;
+		AMateria	**floor;
 
 	public:
 		Character(void);

@@ -6,12 +6,11 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 20:17:44 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 15:32:20 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 20:54:22 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __ICHARACTER_HPP__
 # define __ICHARACTER_HPP__
-# include <iostream>
 # include "AMateria.hpp"
 
 class	ICharacter

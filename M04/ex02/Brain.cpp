@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 12:47:16 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 13:33:03 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 23:47:17 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # include "Brain.hpp"
@@ -14,11 +14,6 @@
 //==== Brain Default Constructor ===============================================
 Brain::Brain(void)
 {
-	int	i;
-
-	i = -1;
-	while (++i < 100)
-		ideas[i] = "Unknown";
 }
 
 //==== Brain Constructor =======================================================
@@ -38,7 +33,7 @@ Brain::Brain(const Brain& brain)
 }
 
 //==== Brain Destructor ========================================================
-Brain::~Brain()
+Brain::~Brain(void)
 {
 	std::cout << "Brain Destructor Called" << std::endl;
 }

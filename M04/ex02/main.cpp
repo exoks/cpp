@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:23:26 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 15:48:32 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 23:46:31 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Dog.hpp"
@@ -15,6 +15,7 @@
 int main(void)
 {
 	Animal	**animals;
+	Cat		cat;
 	int		i;
 
 	std::cout	<< std::endl
@@ -29,12 +30,14 @@ int main(void)
 		else
 			animals[i] = new Cat();
 	}
-
+	
+	// add more tests for deep copy and not shallow copy
 	std::cout	<< std::endl
 				<< "============= Deleting Objects =============" << std::endl;
 	while (--i >= 0)
 	{
 		std::cout << std::endl << 4 - i << ": ";
+		animals[3 - i]->makeSound();
 		delete animals[3 - i];
 	}
 	delete animals;

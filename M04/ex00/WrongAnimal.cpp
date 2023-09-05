@@ -6,13 +6,13 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:18:49 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 11:39:30 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 22:19:47 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # include "WrongAnimal.hpp"
 
 //==== WrongAnimal Default Constructor =========================================
-WrongAnimal::WrongAnimal() : type("Unkown")
+WrongAnimal::WrongAnimal(void) : type("Unkown")
 {
 	std::cout << "WrongAnimal Default Constructor Called" << std::endl;
 }
@@ -36,7 +36,7 @@ WrongAnimal&	WrongAnimal::operator= (const WrongAnimal& wrongAnimal)
 }
 
 //==== WrongAnimal Destructor ==================================================
-WrongAnimal::~WrongAnimal()
+WrongAnimal::~WrongAnimal(void)
 {
 	std::cout << "WrongAnimal Destructor Called" << std::endl;
 }
@@ -45,12 +45,6 @@ WrongAnimal::~WrongAnimal()
 std::string	WrongAnimal::getType(void) const
 {
 	return (type);
-}
-
-//==== setType =================================================================
-void	WrongAnimal::setType(std::string type)
-{
-	this->type = type;
 }
 
 //==== makeSound ===============================================================

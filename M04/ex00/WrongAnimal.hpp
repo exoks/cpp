@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:16:30 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 11:06:15 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 22:19:34 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __WRONGANIMAL_HPP__
@@ -19,15 +19,14 @@ class	WrongAnimal
 		std::string type;
 	
 	public:
-		WrongAnimal();
+		WrongAnimal(void);
 		WrongAnimal(const WrongAnimal& wrongAnimal);
 		WrongAnimal(std::string type);
-		~WrongAnimal();
+		~WrongAnimal(void);
 		
 		WrongAnimal& operator=(const WrongAnimal& wrongAnimal);
 	
 		std::string	getType(void) const;
-		void		setType(std::string type);
 		void		makeSound(void) const;
 };
 

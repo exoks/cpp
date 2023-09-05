@@ -6,22 +6,40 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 22:51:56 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 15:18:58 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 19:40:14 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Character.hpp"
 
 //==== Character Default Consturctor ===========================================
-Character::Character(void) : name("undefind"), slot(-1)
+Character::Character(void) : name("undefind")
 {
+	int	i;
+
 	inventory = new AMateria*[4];
+	floor = new AMateria*[4];
+	i = -1;
+	while (++i < 4)
+	{
+		inventory[i] = NULL;
+		floor[i] = NULL;
+	}
 }
 
 //==== Character Consturctor ===================================================
-Character::Character(std::string name) : name(name), slot(-1)
+Character::Character(std::string name) : name(name)
 {
+	int	i;
+
 	inventory = new AMateria*[4];
+	floor = new AMateria*[4];
+	i = -1;
+	while (++i < 4)
+	{
+		inventory[i] = NULL;
+		floor[i] = NULL;
+	}
 }
 
 //==== Copy Consturctor ========================================================
@@ -37,16 +55,34 @@ Character::~Character()
 
 	i = -1;
 	while (++i < 4)
+	{
 		delete inventory[i];
+		delete floor[i];
+	}
 	delete inventory;
+	delete floor;
 }
 
 //==== Copy Assignment Operator ================================================
 Character&	Character::operator=(const Character& character)
 {
-	// neet to work on this operator
-	slot = character.slot;
+	int	i;
+
 	name = character.name;
+	inventory = new AMateria*[4];
+	floor = new AMateria*[4];
+	i = -1;
+	while (++i < 4)
+	{
+		if (inventory[i])
+			inventory[i] = character.inventory[i]->clone();
+		if (!inventory[i])
+			inventory[i] = NULL;
+		if (floor[i])
+			floor[i] = character.floor[i]->clone();
+		if (!floor[i])
+			floor[i] = NULL;
+	}
 	return (*this);
 }
 
@@ -60,18 +96,37 @@ std::string	const& Character::getName(void) const
 //==== use =====================================================================
 void	Character::use(int index, ICharacter& target)
 {
-	(void) index;
-	(void) target;
+	if (index <= 3 && inventory[index] != NULL)
+		inventory[index]->use(target);
 }
 
 //==== unequip =================================================================
 void	Character::equip(AMateria *m)
 {
-	(void) m;
+	int	slot;
+
+	slot = -1;
+	while (++slot < 4 && inventory[slot] != NULL)
+		;
+	if (slot < 4)
+		inventory[slot] = m;
+	else
+		delete m;
 }
 
 //==== unequip =================================================================
 void	Character::unequip(int idx)
 {
-	(void) idx;
+	int	i;
+	
+	if (idx > 3 || (idx <= 3 && inventory[idx] == NULL))
+		return ;
+	i = -1;
+	while (++i < 4 && floor[i] != NULL)
+		;
+	if (i < 4)
+	{
+		floor[i] = inventory[i];
+		inventory[i] = NULL;
+	}
 }

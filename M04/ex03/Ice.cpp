@@ -6,23 +6,22 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:37:41 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 21:40:47 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 20:48:59 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
 //==== Ice Default Constructor =================================================
-Ice::Ice(void)
+Ice::Ice(void) : AMateria("ice")
 {
-	type = "ice";
 	std::cout << "Ice Constructor Called" << std::endl;
 }
 
 //==== Ice Copy Constructor ====================================================
 Ice::Ice(const Ice& ice)
 {
-	*this = ice;
+	(*this) = ice;
 }
 
 //==== Ice Destructor ==========================================================
@@ -41,11 +40,7 @@ Ice&	Ice::operator= (const Ice& ice)
 //==== Ice Clone Overrideing ===================================================
 Ice		*Ice::clone(void) const
 {
-	Ice	*ice;
-
-	ice = new Ice();
-	*ice = *this;
-	return (ice);
+	return (new Ice(*this));
 }
 
 //==== use =====================================================================

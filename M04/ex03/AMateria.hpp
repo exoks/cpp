@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 15:54:23 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 21:28:08 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 20:44:01 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __AMATERIA_HPP__
@@ -22,13 +22,14 @@ class	AMateria
 
 	public:
 		AMateria(void);
+		AMateria(std::string const& type);
 		AMateria(const AMateria& aMateria);
 		virtual ~AMateria();
 
 		AMateria&	operator=(const AMateria& aMateria);
 
 		std::string const&	getType(void) const;
-		virtual AMateria	*clone() const = 0;
+		virtual AMateria	*clone(void) const = 0;
 		virtual	void		use(ICharacter& target) = 0;
 };
 

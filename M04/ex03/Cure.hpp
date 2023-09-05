@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:35:21 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 15:39:40 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 20:44:27 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __CURE_HPP__
@@ -22,7 +22,7 @@ class	Cure : public AMateria
 		
 		Cure&	operator= (const Cure& cure);
 
-		Cure	*clone() const;
+		Cure	*clone(void) const;
 		void	use(ICharacter& target);
 };
 

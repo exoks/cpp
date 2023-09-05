@@ -6,16 +6,15 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:37:41 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 21:43:17 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 20:47:02 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 //==== Cure Default Constructor =================================================
-Cure::Cure(void)
+Cure::Cure(void) : AMateria("cure")
 {
-	type = "cure";
 	std::cout << "Cure Constructor Called" << std::endl;
 }
 
@@ -39,19 +38,15 @@ Cure&	Cure::operator= (const Cure& cure)
 }
 
 //==== Cure Clone Overrideing ===================================================
-Cure		*Cure::clone() const
+Cure		*Cure::clone(void) const
 {
-	Cure	*cure;
-
-	cure = new Cure();
-	*cure = *this;
-	return (cure);
+	return (new Cure(*this));
 }
 
 //==== user ====================================================================
 void	Cure::use(ICharacter& target)
 {
-	std::cout	<< "* heals"
+	std::cout	<< "* heals "
 				<< target.getName()
 				<< "'s woundes *"
 				<< std::endl;

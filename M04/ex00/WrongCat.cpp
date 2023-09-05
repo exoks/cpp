@@ -6,13 +6,13 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 13:42:12 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/03 11:13:33 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 22:20:00 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "WrongCat.hpp"
 
 //==== WrongCat Default Constructor ============================================
-WrongCat::WrongCat() : WrongAnimal("WrongCat")
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 {
 	std::cout << "WrongCat Default Constructor Called" << std::endl;
 }
@@ -31,7 +31,7 @@ WrongCat&	WrongCat::operator= (const WrongCat& wrongCat)
 }
 
 //==== WrongCat Destructor =====================================================
-WrongCat::~WrongCat()
+WrongCat::~WrongCat(void)
 {
 	std::cout << "WrongCat Destructor Called" << std::endl;
 }

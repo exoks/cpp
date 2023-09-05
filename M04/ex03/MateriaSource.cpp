@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:18:25 by oezzaou           #+#    #+#             */
-/*   Updated: 2023/09/04 20:41:00 by oezzaou          ###   ########.fr       */
+/*   Updated: 2023/09/05 19:48:25 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 # include "MateriaSource.hpp"
@@ -21,7 +21,7 @@ MateriaSource::MateriaSource(void)
 //==== MateriaSouce Constructor ================================================
 MateriaSource::MateriaSource(const MateriaSource& mSource)
 {
-	*this = mSource;
+	(*this) = mSource;
 }
 
 //==== MateriaSource Destructor ================================================
@@ -38,16 +38,20 @@ MateriaSource::~MateriaSource()
 //==== MateriaSource Copy Assignment Operator ==================================
 MateriaSource&	MateriaSource::operator= (const MateriaSource& mSource)
 {
-	(void) mSource;
+	int	i;
+
+	db = new AMateria*[4];
+	i = -1;
+	while (++i <= idx)
+		db[i] = mSource.db[i]->clone();
 	return (*this);
 }
 
 //==== learnMateria ============================================================
 void	MateriaSource::learnMateria(AMateria *m)
 {
-	if (idx > 3)
-		return ;
-	db[++idx] = m; 
+	if (idx < 3)
+		db[++idx] = m; 
 }
 
 //==== newMateria ==============================================================
